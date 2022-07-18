@@ -1,0 +1,386 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "rajan abhishek",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "getOrderIntent",
+          "slots": [
+            {
+              "name": "coffee",
+              "type": "coffeeTypes"
+            },
+            {
+              "name": "addon",
+              "type": "addons",
+              "samples": [
+                "I want {addon} addon in my {coffee}",
+                "{addon}",
+                "I want {addon} addon to my {coffee}",
+                "I would have {addon} addon",
+                "I would like {addon} addon"
+              ]
+            },
+            {
+              "name": "flavour",
+              "type": "flavours",
+              "samples": [
+                "{flavour}",
+                "I will have {flavour} flavoured {coffee}"
+              ]
+            }
+          ],
+          "samples": [
+            "{coffee}",
+            "I would like {coffee} in {addon}",
+            "I would like {coffee} in {flavour}",
+            "I want {coffee} in {flavour} flavour with {addon} addon",
+            "I want {coffee} in {flavour} flavour",
+            "I will have {coffee} with {addon} addon",
+            "I will have {coffee}",
+            "hello"
+          ]
+        },
+        {
+          "name": "getExitIntent",
+          "slots": [
+            {
+              "name": "yesNo",
+              "type": "yesOrNoType",
+              "samples": [
+                "{yesNo}"
+              ]
+            }
+          ],
+          "samples": [
+            "{yesNo} thank you",
+            "{yesNo} i will not",
+            "{yesNo} I will ",
+            "{yesNo}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "cold brew"
+              }
+            },
+            {
+              "name": {
+                "value": "pour over"
+              }
+            },
+            {
+              "name": {
+                "value": "drip"
+              }
+            },
+            {
+              "name": {
+                "value": "aeropress"
+              }
+            },
+            {
+              "name": {
+                "value": "french press"
+              }
+            },
+            {
+              "name": {
+                "value": "soy milk"
+              }
+            },
+            {
+              "name": {
+                "value": "almond milk"
+              }
+            }
+          ],
+          "name": "addons"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "irish"
+              }
+            },
+            {
+              "name": {
+                "value": "mocha"
+              }
+            },
+            {
+              "name": {
+                "value": "black"
+              }
+            },
+            {
+              "name": {
+                "value": "arabica"
+              }
+            },
+            {
+              "name": {
+                "value": "espresso"
+              }
+            },
+            {
+              "name": {
+                "value": "americano"
+              }
+            },
+            {
+              "name": {
+                "value": "cappuccino"
+              }
+            },
+            {
+              "name": {
+                "value": "latte"
+              }
+            }
+          ],
+          "name": "coffeeTypes"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "caramel"
+              }
+            },
+            {
+              "name": {
+                "value": "French Vanilla"
+              }
+            },
+            {
+              "name": {
+                "value": "dark chocolate"
+              }
+            },
+            {
+              "name": {
+                "value": "cocoa"
+              }
+            },
+            {
+              "name": {
+                "value": "hazelnut"
+              }
+            }
+          ],
+          "name": "flavours"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "no",
+                "synonyms": [
+                  "no way",
+                  "i do not",
+                  "nope"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "yes",
+                "synonyms": [
+                  "okay",
+                  "you know it",
+                  "i do",
+                  "yo",
+                  "yeah",
+                  "yup"
+                ]
+              }
+            }
+          ],
+          "name": "yesOrNoType"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "getOrderIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "coffee",
+              "type": "coffeeTypes",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {},
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1418456260591.1343961327200.81710183475"
+                }
+              ]
+            },
+            {
+              "name": "addon",
+              "type": "addons",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1418456260591.864496079987"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1418456260591.864496079987.454886072337"
+                }
+              ]
+            },
+            {
+              "name": "flavour",
+              "type": "flavours",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1418456260591.429057400269"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1418456260591.429057400269.1652504631936"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "getExitIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "yesNo",
+              "type": "yesOrNoType",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1147843072224.1266552660813"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1147843072224.1266552660813.108713953723"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1418456260591.1343961327200",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Which coffee would you like to have?"
+          },
+          {
+            "type": "PlainText",
+            "value": " What would you like to have today"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1418456260591.864496079987",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Okay, which add on would you like to choose for your {coffee}"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1418456260591.429057400269",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Okay, which flavour would you like to have for your {coffee}"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1147843072224.1266552660813",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": " Would you like to leave?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1418456260591.1343961327200.81710183475",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please select from available choices only"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1418456260591.864496079987.454886072337",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please select from available add ons only"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1418456260591.429057400269.1652504631936",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please select from available flavours only."
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1147843072224.1266552660813.108713953723",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sorry, coult not get you"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "27"
+}

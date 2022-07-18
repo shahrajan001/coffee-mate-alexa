@@ -1,0 +1,48 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:443371813915:function:54922571-58b6-4c30-89e2-441427a64ed1:Release_0"
+        },
+        "interfaces": [],
+        "regions": {
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:443371813915:function:54922571-58b6-4c30-89e2-441427a64ed1:Release_0"
+            }
+          },
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:443371813915:function:54922571-58b6-4c30-89e2-441427a64ed1:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:443371813915:function:54922571-58b6-4c30-89e2-441427a64ed1:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "publishingInformation": {
+      "distributionCountries": [],
+      "isAvailableWorldwide": true,
+      "locales": {
+        "en-US": {
+          "description": "Sample Full Description",
+          "examplePhrases": [
+            "Alexa open hello world",
+            "hello",
+            "help"
+          ],
+          "keywords": [],
+          "name": "coffeemate",
+          "summary": "Sample Short Description"
+        }
+      },
+      "testingInstructions": "Sample Testing Instructions."
+    }
+  }
+}
